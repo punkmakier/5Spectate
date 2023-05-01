@@ -53,6 +53,33 @@
                 return $res['ProfessionID'];
             }
         }
+        public function showRoomInChargeText($UserID){
+            $con = $this->openConnection();
+            $sqlQ = $con->prepare("SELECT RoomInCharge FROM users WHERE UserID = '$UserID'");
+            if($sqlQ->execute()){
+                $res = $sqlQ->fetch();
+                if($res['RoomInCharge'] == "PhysicsDept"){
+                    $room = "Physics Department";
+                }elseif($res['RoomInCharge'] == "FacultyRoom"){
+                    $room = "Faculty Room";
+                }elseif($res['RoomInCharge'] == "ChemEngDept"){
+                    $room = "Chemical Engineering Department";
+                }elseif($res['RoomInCharge'] == "IndEngDept"){
+                    $room = "Industrial Engineering Department";
+                }
+                return $room;
+            }
+        }
+        public function showRoomInCharge($UserID){
+            $con = $this->openConnection();
+            $sqlQ = $con->prepare("SELECT RoomInCharge FROM users WHERE UserID = '$UserID'");
+            if($sqlQ->execute()){
+                $res = $sqlQ->fetch();
+
+                return $res['RoomInCharge'];
+            }
+        }
+        
     }
 
 

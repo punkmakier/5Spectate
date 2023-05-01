@@ -45,6 +45,12 @@
                     <input type="text" class="form-control" value="<?php echo $userinfo->showUserType($UserID) ;?>" readonly>
                 </div>
             </div>
+            <div class="col">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Profession ID</label>
+                    <input name="ProfessionID" type="text" class="form-control" value="<?php echo $userinfo->showProfessionID($UserID) ;?>">
+                </div>
+            </div>
            
         </div>
         <div class="row">
@@ -68,12 +74,14 @@
             </div>
         </div>
         <div class="row">
-             <div class="col">
+             
+            <div class="col">
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Profession ID</label>
-                    <input name="ProfessionID" type="text" class="form-control" value="<?php echo $userinfo->showProfessionID($UserID) ;?>">
+                    <label for="exampleInputEmail1" class="form-label">Department</label>
+                    <input name="ProfessionID" readonly type="text" class="form-control" value="<?php echo $userinfo->showRoomInChargeText($UserID) ;?>">
                 </div>
             </div>
+            
         </div>
         
       </div>
@@ -122,6 +130,7 @@
                     <input name="connewPass" type="password" class="form-control" required>
                 </div>
             </div>
+            
         </div>
         
       </div>

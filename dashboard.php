@@ -56,6 +56,7 @@
     <?php include 'header.php'; ?>
 
     <main>
+        <?php if($_SESSION['UserType'] == "Auditor"):?>
         <div class="card-system" id="auditsys">
             <i class="fa-solid fa-magnifying-glass"></i><br>
             <span>Auditing System</span>
@@ -72,6 +73,18 @@
         <i class="fa-solid fa-users"></i><br>
             <span>Users Management</span>
         </div>
+        <?php endif;?>
+
+        <?php if($_SESSION['UserType'] == "Teacher"): ?>
+            <div class="card-system" id="revisionSys">
+                <i class="fa-solid fa-magnifying-glass"></i><br>
+                <span>Revision System</span>
+            </div>
+            <div class="card-system" id="supportSys">
+                <i class="fa-solid fa-magnifying-glass"></i><br>
+                <span>Support System</span>
+            </div>
+        <?php endif; ?>
     </main>
 
 
@@ -82,8 +95,11 @@
         $("#auditsys").click(function(){
             window.location.href="auditsystem.php";
         })
+        $("#revisionSys").click(function(){
+            window.location.href="revisionsystem.php";
+        })
         $("#concernsys").click(function(){
-            
+            window.location.href="concernsystem.php";
         })
         $("#kpisys").click(function(){
             

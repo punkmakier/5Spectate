@@ -7,8 +7,10 @@
         $formID = $_POST['FormID'];
         $roomID = $_POST['RoomID'];
         $Type = $_POST['Type'];
+        $AudName = $_POST['AudName'];
+        
 
-        if($submit->submitSaveForm($formID,$roomID,$Type)){
+        if($submit->submitSaveForm($formID,$roomID,$Type,$AudName)){
             echo "Success";
         }else{
             echo "Failed";

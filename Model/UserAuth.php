@@ -4,14 +4,14 @@
 
     class UserAuth extends config{
 
-        public function registerAccount($Username,$Password,$UserType,$UserID){
+        public function registerAccount($Username,$Password,$UserType,$UserID,$roomIncharge){
             $con = $this->openConnection();
             $sqlCheck = $con->query("SELECT `UserID` FROM `users` WHERE `UserID` = '$UserID'");
             if($sqlCheck->execute()){
                 if($sqlCheck->rowCount() > 0){
                     return false;
                 }else{
-                    $sqlQ = $con->prepare("INSERT INTO users (UserID,Username,Password,UserType) VALUES('$UserID','$Username','$Password','$UserType')");
+                    $sqlQ = $con->prepare("INSERT INTO users (UserID,Username,Password,UserType,RoomInCharge) VALUES('$UserID','$Username','$Password','$UserType','$roomIncharge')");
                     if($sqlQ->execute()){
                         return true;
                     }

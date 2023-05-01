@@ -17,7 +17,7 @@
 <body>
    <div class="overlay"></div>
 
-   <div class="loginpanel">
+   <div class="loginpanel" style="height: auto; padding-bottom: 30px;">
         <div class="header"><i class="fa-solid fa-clipboard"></i> MARJ FACILITY AUDIT</div>
 
         <div class="row me-3">
@@ -42,11 +42,21 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Login as:</label>
-                    <select class="form-select" aria-label="Default select example" name="UserType" required>
+                    <select class="form-select" aria-label="Default select example" name="UserType" id="ifTeacher" required>
                         <option selected>- Select -</option>
                         <option value="Maintenance">Maintenance</option>
                         <option value="Teacher">Teacher</option>
                         <option value="Auditor">Auditor</option>
+                    </select>
+                </div>
+                <div class="mb-3" style="display: none;" id="roomIncharge">
+                    <label for="exampleInputPassword1" class="form-label">Room In Charge</label>
+                    <select class="form-select" aria-label="Default select example" name="roomIncharge" id="" required>
+                        <option selected>- Select -</option>
+                        <option value="PhysicsDept">Physics Department</option>
+                        <option value="FacultyRoom">Faculty Room</option>
+                        <option value="ChemEngDept">Chemical Engineering Department</option>    
+                        <option value="IndEngDept">Industrial Engineering Department</option>
                     </select>
                 </div>
                 <div class="mx-auto text-center">
@@ -63,6 +73,13 @@
 
     <script>
         $(document).ready(function(){
+            $("#ifTeacher").on("change", function(){
+                if($(this).val() == "Teacher"){
+                    $("#roomIncharge").show();
+                }else{
+                    $("#roomIncharge").hide();
+                }
+            })
             $("#registerAccount").on("submit", function(e){
                 e.preventDefault();
                 let formData = $("#registerAccount").serialize();
