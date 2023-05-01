@@ -45,6 +45,14 @@
                 return $res['Lastname'];
             }
         }
+        public function showUserID($UserID){
+            $con = $this->openConnection();
+            $sqlQ = $con->prepare("SELECT UserID FROM users WHERE UserID = '$UserID'");
+            if($sqlQ->execute()){
+                $res = $sqlQ->fetch();
+                return $res['UserID'];
+            }
+        }
         public function showProfessionID($UserID){
             $con = $this->openConnection();
             $sqlQ = $con->prepare("SELECT ProfessionID FROM users WHERE UserID = '$UserID'");

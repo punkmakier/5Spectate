@@ -26,6 +26,8 @@
     <?php include 'header.php'; ?>
 
     <div class="container">
+    <button class="btn btn-primary mt-5" style="width: 8vw;" onclick="window.history.back()"><i class="fa-solid fa-arrow-left-long me-3"></i> Back</button>
+
         <h3 class="mt-5 mb-5">List of Users</h5>
        <table class="table table-striped" id="thisTable">
             <thead class="bg-primary text-white">

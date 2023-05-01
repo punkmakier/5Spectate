@@ -6,8 +6,10 @@
         $selectedID = $_POST['SelectedID'];
 
         $display->displaySubmittedCompliance($selectedID);
+      
+           
 
 
     }
+    ?>
 
-?>

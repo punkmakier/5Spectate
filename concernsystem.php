@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="css/fontawesome/all.min.css">
     <link rel="stylesheet" href="css/header.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
 </head>
 <body>
 <?php include 'GetUserInfo.php'; ?>
@@ -42,12 +44,11 @@
         </ul>
         <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-            <table class="table mt-5">
+            <table class="table mt-5" id="thisTable">
                 <thead class="bg-primary text-center text-white">
                     <tr>
                         <td>Audit Finding ID</td>
                         <td>Date Issued</td>
-                        <td>Submitted By</td>
                         <td>Date Submitted</td>
                         <td>Status</td>
                         <td>Attempt Number</td>
@@ -60,7 +61,7 @@
             </table>
         </div>
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-        <table class="table table-striped mt-5">
+        <table class="table table-striped mt-5" id="thisTable1">
                 <thead class="bg-primary text-center text-white">
                     <tr>
                         <td>Audit Finding ID</td>
@@ -77,7 +78,7 @@
             </table>
         </div>
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
-        <table class="table table-striped mt-5">
+        <table class="table table-striped mt-5" id="thisTable2">
                 <thead class="bg-primary text-center text-white">
                     <tr>
                         <td>Audit Finding ID</td>
@@ -121,12 +122,14 @@
 
     <script src="js/jquery.v3.6.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
     <?php include 'footer.php'; ?>
 
 
     <script>
         $(document).ready(function() {
+
             $(".viewAll").click(function(){
                 var selected = $(this).attr("id");
                 $.ajax({
@@ -135,6 +138,7 @@
                     data: {SelectedID : selected},
                     success: function(response){
                         $("#selectedIDModal").html(response)
+
                     }
                 })
                 $("#viewAll").modal("show")
@@ -150,7 +154,6 @@
                     processData:false,
                     cache: false,
                     success: function(response){
-                        alert(response)
                         if(response == "Success"){
                             Swal.fire({
                             title: 'Success',

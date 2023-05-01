@@ -80,13 +80,47 @@
                 <i class="fa-solid fa-magnifying-glass"></i><br>
                 <span>Revision System</span>
             </div>
-            <div class="card-system" id="supportSys">
+            <div class="card-system" id="supportSystem">
                 <i class="fa-solid fa-magnifying-glass"></i><br>
                 <span>Support System</span>
             </div>
-        <?php endif; ?>
+       
     </main>
+    <div class="container">
+    <?php endif; ?>
+        <?php if($_SESSION['UserType'] == "Maintenance"):?>
+            <div class="card-system" id="assistanceSystem">
+                <i class="fa-solid fa-magnifying-glass"></i><br>
+                <span>Assistance System</span>
+            </div>
 
+        <?php endif;?>
+    </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="supportSystemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Support System</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="" id="submitSupportForm">
+      <div class="modal-body">
+        <select name="Maintenance" id="" class="form-select mb-3">
+            <option value="Maintenance">Maintenance</option>
+        </select>
+        <textarea name="Description" id="" cols="30" rows="5" class="form-control"></textarea>
+        <input type="file" name="filename" class="mt-3 form-control">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
 
     <script src="js/jquery.v3.6.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
@@ -102,11 +136,19 @@
             window.location.href="concernsystem.php";
         })
         $("#kpisys").click(function(){
+            window.location.href="kpisystem.php";
             
         })
         $("#usersys").click(function(){
             window.location.href="listusers.php";
         })
+        $("#supportSystem").click(function(){
+            window.location.href="supportsystem.php";
+        })
+        $("#assistanceSystem").click(function(){
+            window.location.href="maintenanceview.php";
+        })
+        
         
     </script>
 

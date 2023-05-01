@@ -1,7 +1,7 @@
 <header>
         <div>
             <i class="fa-regular fa-clipboard"></i>
-            MARJ Facility Audit
+            5Spectate
         </div>
         <div>
             <i class="fa-regular fa-circle-user" style="display: inline-block;"></i>
@@ -73,6 +73,7 @@
                 </div>
             </div>
         </div>
+        <?php if($_SESSION['UserType'] != "Maintenance"): ?>
         <div class="row">
              
             <div class="col">
@@ -83,6 +84,7 @@
             </div>
             
         </div>
+        <?php endif;?>
         
       </div>
       <div class="modal-footer">

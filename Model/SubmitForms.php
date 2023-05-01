@@ -19,7 +19,7 @@
         }
 
 
-        public function submitSaveFormNonComply($uniqueID,$formID,$roomID,$Type,$Desc,$Filename,$auditor){
+        public function submitSaveFormNonComply($uniqueID,$formID,$roomID,$Type,$Desc,$Filename,$auditor,$date){
 
             $con = $this->openConnection();
             $sqlQ = $con->prepare("SELECT * FROM evaluated_form WHERE form_id = '$formID' AND room_id = '$roomID' AND Status = 'Pending'");
@@ -27,7 +27,7 @@
                 if($sqlQ->rowCount() > 0){
                     return false;
                 }else{
-                    $sqlinsert = $con->prepare("INSERT INTO evaluated_form (`UnqiueKeyID`,`form_id`,`room_id`,`Type`,`Description`,`FileName`,`AuditorName`) VALUES ('$uniqueID','$formID', '$roomID', '$Type','$Desc','$Filename','$auditor')");
+                    $sqlinsert = $con->prepare("INSERT INTO evaluated_form (`UnqiueKeyID`,`form_id`,`room_id`,`Type`,`Description`,`FileName`,`AuditorName`,`DateCreated`) VALUES ('$uniqueID','$formID', '$roomID', '$Type','$Desc','$Filename','$auditor','$date')");
                     if($sqlinsert->execute()){
                         return true;
                     }
