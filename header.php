@@ -74,8 +74,8 @@
             </div>
         </div>
         <?php if($_SESSION['UserType'] != "Maintenance"): ?>
-        <div class="row">
-             
+        <?php $auditor =  $_SESSION['UserType'] == "Auditor" ? "style='display: none;'" : ""; ?>
+        <div class="row" <?php echo $auditor; ?> >
             <div class="col">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Department</label>

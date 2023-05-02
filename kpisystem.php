@@ -50,8 +50,7 @@
 
         <div style="width: 100%; text-align: center;">
             <div id="btnCustom" type="button" data-bs-toggle="modal" data-bs-target="#showCountAll">Count of Issues Found</div>
-            <div id="btnCustom" type="button" data-bs-toggle="modal" data-bs-target="#showCountAllRecommendation">Lead Time of the Recommendation Implementation</div>
-            <div id="btnCustom" type="button" data-bs-toggle="modal" data-bs-target="#showCountAllRecommendationTIME">Lead Time of<br>Conducting Audit</div>
+            <div id="btnCustom" type="button" data-bs-toggle="modal" data-bs-target="#showCountAllRecommendationTIME">Lead Time of the Recommendation Implementation</div>
         </div>
        </div>
        

@@ -70,8 +70,8 @@
         <select name="Maintenance" id="" class="form-select mb-3">
             <option value="Maintenance">Maintenance</option>
         </select>
-        <input name="TeacherID" type="hidden    " value="<?php echo $TeacherID; ?>">
-        <input name="Department" type="hidden   " value="<?php echo $Department; ?>">
+        <input name="TeacherID" type="hidden" value="<?php echo $TeacherID; ?>">
+        <input name="Department" type="hidden" value="<?php echo $Department; ?>">
         <input type="hidden" value="<?php echo $userinfo->showFirstname($UserID)." ".$userinfo->showLastname($UserID) ;?>" name="TeacherName">
         <textarea name="Description" id="" cols="30" rows="5" class="form-control"></textarea>
         <input type="file" name="filename" class="mt-3 form-control">

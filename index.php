@@ -18,7 +18,7 @@
    <div class="overlay"></div>
 
    <div class="loginpanel">
-        <div class="header"><i class="fa-solid fa-clipboard"></i> MARJ FACILITY AUDIT</div>
+        <div class="header"><i class="fa-solid fa-clipboard"></i> 5Spectate</div>
 
         <div class="row me-3">
             <div class="col text-end p-3">
